@@ -1,0 +1,27 @@
+[versions]
+agp = "8.7.3"
+kotlin = "2.0.21"
+ksp = "2.1.21-2.0.2"
+kotlinxCoroutines = "1.9.0"
+composeRuntimeAnnotation = "1.7.5"
+junit = "4.13.2"
+kotlinxCoroutinesTest = "1.9.0"
+
+[libraries]
+# Dependencies for the form-validation runtime module
+kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlinxCoroutines" }
+androidx-compose-runtime-annotation = { group = "androidx.compose.runtime", name = "runtime", version.ref = "composeRuntimeAnnotation" }
+
+# Dependencies for the form-codegen processor module
+ksp-symbol-processing-api = { group = "com.google.devtools.ksp", name = "symbol-processing-api", version.ref = "ksp" }
+
+# Dependencies for testing the library
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "kotlinxCoroutinesTest" }
+
+[plugins]
+# Core plugins needed for an Android library project and a JVM library
+android-library = { id = "com.android.library", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
