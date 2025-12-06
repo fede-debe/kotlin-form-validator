@@ -39,6 +39,7 @@ In your `libs.versions.toml`:
 ```toml
 [versions]
 formValidator = "1.0.7"
+# Use the KSP version matching your Kotlin version (e.g., Kotlin 2.0.21 -> KSP 2.0.21-1.0.25)
 ksp = "2.1.0-1.0.28"
 
 [libraries]
@@ -59,6 +60,8 @@ plugins {
 
 dependencies {
     implementation(libs.form.validation)
+    // Use 'implementation' to access the annotation AND 'ksp' to generate the code
+    implementation(libs.form.codegen)
     ksp(libs.form.codegen)
 }
 ```
