@@ -16,37 +16,23 @@ A declarative, type-safe form validation library for Android with Jetpack Compos
 
 ## Installation
 
-### Step 1: Add GitHub Packages Repository
+To use this library, add JitPack to your repositories and then include the dependencies.
 
-In your project's `settings.gradle.kts`:
+### Step 1: Add JitPack repository
+
+In your root `settings.gradle.kts`:
 
 ```kotlin
 dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        maven {
-            name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/fede-debe/kotlin-form-validator")
-            credentials {
-                username = project.findProperty("gpr.user") as String? ?: System.getenv("GPR_USER")
-                password = project.findProperty("gpr.key") as String? ?: System.getenv("GPR_KEY")
-            }
-        }
+        maven { url = uri("https://jitpack.io") }
     }
 }
 ```
 
-### Step 2: Add Credentials
-
-In your `gradle.properties`:
-
-```properties
-gpr.user=your-github-username
-gpr.key=ghp_your_personal_access_token
-```
-
-### Step 3: Add Dependencies
+### Step 2: Add Dependencies
 
 In your `libs.versions.toml`:
 

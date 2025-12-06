@@ -5,26 +5,14 @@ plugins {
 }
 
 group = "com.github.fede-debe"
-version = "1.0.2"
+version = "1.0.3"
 
 android {
-    namespace = "com.example.form.core"
+    namespace = "com.github.fede-debe.form.validation"
     compileSdk = 34
 
     defaultConfig {
-        minSdk = 26
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles("consumer-rules.pro")
-    }
-
-    buildTypes {
-        release {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
-        }
+        minSdk = 26 // Required for java.time (LocalDate) support
     }
 
     compileOptions {
@@ -35,18 +23,16 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
-
-    publishing {
-        singleVariant("release") {
-            withSourcesJar()
-            withJavadocJar()
-        }
-    }
 }
 
 dependencies {
+    // 1. Coroutines (for StateFlow)
     implementation(libs.kotlinx.coroutines.android)
+
+    // 2. Compose Runtime (for @Stable annotation)
     implementation(libs.androidx.compose.runtime.annotation)
+
+    // 3. Testing
     testImplementation(libs.junit)
     testImplementation(libs.kotlinx.coroutines.test)
 }
@@ -54,35 +40,9 @@ dependencies {
 publishing {
     publications {
         create<MavenPublication>("release") {
-            groupId = "com.github.fede-debe"
             artifactId = "form-validation"
-            version = "1.0.0"
-
             afterEvaluate {
                 from(components["release"])
-            }
-
-            pom {
-                name.set("Form Validation")
-                description.set("Declarative form validation library")
-                url.set("https://github.com/fede-debe/kotlin-form-validator")
-                licenses {
-                    license {
-                        name.set("The Apache License, Version 2.0")
-                        url.set("http://www.apache.org/licenses/LICENSE-2.0.txt")
-                    }
-                }
-                developers {
-                    developer {
-                        id.set("fede-debe")
-                        name.set("Federico")
-                        email.set("federico.debenedictis33@gmail.com")
-                    }
-                }
-                scm {
-                    connection.set("scm:git:git://github.com/fede-debe/kotlin-form-validator.git")
-                    url.set("https://github.com/fede-debe/kotlin-form-validator")
-                }
             }
         }
     }

@@ -7,6 +7,7 @@ kotlinxCoroutines = "1.9.0"
 composeRuntimeAnnotation = "1.7.5"
 junit = "4.13.2"
 kotlinxCoroutinesTest = "1.9.0"
+symbolProcessingApi = "1.9.22-1.0.17"
 
 [libraries]
 # Dependencies for the form-validation runtime module
@@ -19,6 +20,7 @@ ksp-symbol-processing-api = { group = "com.google.devtools.ksp", name = "symbol-
 # Dependencies for testing the library
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "kotlinxCoroutinesTest" }
+symbol-processing-api-v19221017 = { module = "com.google.devtools.ksp:symbol-processing-api", version.ref = "symbolProcessingApi" }
 
 [plugins]
 # Core plugins needed for an Android library project and a JVM library
