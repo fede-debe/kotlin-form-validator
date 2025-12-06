@@ -5,10 +5,10 @@ plugins {
 }
 
 group = "com.github.fede-debe"
-version = "1.0.3"
+version = "1.0.4"
 
 android {
-    namespace = "com.github.fede-debe.form.validation"
+    namespace = "com.github.form.validation"
     compileSdk = 34
 
     defaultConfig {

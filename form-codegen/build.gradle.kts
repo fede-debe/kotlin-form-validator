@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "com.github.fede-debe"
-version = "1.0.3"
+version = "1.0.4"
 
 dependencies {
     implementation(libs.ksp.symbol.processing.api)
