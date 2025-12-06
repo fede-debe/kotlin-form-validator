@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "com.github.fede-debe"
-version = "1.0.0"
+version = "1.0.1"
 
 android {
     namespace = "com.example.form.core"
