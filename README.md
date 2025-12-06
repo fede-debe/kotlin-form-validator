@@ -38,8 +38,8 @@ In your `libs.versions.toml`:
 
 ```toml
 [versions]
-formValidator = "1.0.0"
-ksp = "2.0.21-1.0.20"
+formValidator = "1.0.5"
+ksp = "2.0.21-1.0.25"
 
 [libraries]
 form-validation = { group = "com.github.fede-debe", name = "form-validation", version.ref = "formValidator" }
