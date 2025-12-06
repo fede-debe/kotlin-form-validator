@@ -29,9 +29,6 @@ local.properties
 *.jks
 *.keystore
 
-# IMPORTANT: Credentials - Don't commit your GitHub token!
-gradle.properties
-
 # Captures
 /captures
 
