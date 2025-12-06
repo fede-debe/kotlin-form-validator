@@ -3,8 +3,7 @@ plugins {
     id("maven-publish")
 }
 
-group = "com.github.fede-debe"
-version = "1.0.5"
+version = "1.0.6"
 
 dependencies {
     implementation(libs.ksp.symbol.processing.api)
