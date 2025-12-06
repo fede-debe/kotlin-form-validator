@@ -19,4 +19,3 @@ rootProject.name = "kotlin-form-validator"
 // Include your library modules
 include(":form-validation")
 include(":form-codegen")
- 

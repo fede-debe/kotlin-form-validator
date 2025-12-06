@@ -12,8 +12,7 @@ android {
     compileSdk = 34
 
     defaultConfig {
-        minSdk = 26 // Required for java.time (LocalDate) support
-
+        minSdk = 26
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
@@ -46,13 +45,8 @@ android {
 }
 
 dependencies {
-    // Coroutines (for StateFlow)
     implementation(libs.kotlinx.coroutines.android)
-
-    // Compose Runtime (for @Stable annotation)
     implementation(libs.androidx.compose.runtime.annotation)
-
-    // Testing
     testImplementation(libs.junit)
     testImplementation(libs.kotlinx.coroutines.test)
 }
@@ -70,16 +64,14 @@ publishing {
 
             pom {
                 name.set("Form Validation")
-                description.set("Declarative, type-safe form validation library for Android with Jetpack Compose")
+                description.set("Declarative form validation library")
                 url.set("https://github.com/fede-debe/kotlin-form-validator")
-
                 licenses {
                     license {
                         name.set("The Apache License, Version 2.0")
                         url.set("http://www.apache.org/licenses/LICENSE-2.0.txt")
                     }
                 }
-
                 developers {
                     developer {
                         id.set("fede-debe")
@@ -87,23 +79,10 @@ publishing {
                         email.set("federico.debenedictis33@gmail.com")
                     }
                 }
-
                 scm {
                     connection.set("scm:git:git://github.com/fede-debe/kotlin-form-validator.git")
-                    developerConnection.set("scm:git:ssh://github.com/fede-debe/kotlin-form-validator.git")
                     url.set("https://github.com/fede-debe/kotlin-form-validator")
                 }
-            }
-        }
-    }
-
-    repositories {
-        maven {
-            name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/fede-debe/kotlin-form-validator")
-            credentials {
-                username = findProperty("gpr.user") as String? ?: System.getenv("GPR_USER")
-                password = findProperty("gpr.key") as String? ?: System.getenv("GPR_KEY")
             }
         }
     }
